@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Greeting based on time</title>
+        <style>
+            body{
+                background-color: rgb(241, 255, 184);
+                font-family:arial,sans-serif;
+                text-align:center;
+            }
+            button{
+                
+                background-color:rgb(250, 176, 211);
+                color:black;
+                border:black;
+                font-size:20px;
+                padding:10px 20px;
+                cursor: pointer;
+                align-items: center;
+                justify-content: center;
+            }
+            button:hover{
+                background-color:rgb(245, 85, 205);
+            }
+            .container {
+                display:flex;
+                flex-direction:  column;
+                align-items:  center;
+                justify-content:center;
+            }
+
+            #greetbox{
+                display:none;
+                position:fixed;
+                transform:translate(-50%,-50%);
+                background-color: rgb(86, 148, 228);
+                padding:30px 40px;
+                font-size:  20px;
+                color:black;
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hey there! Let's see what time it vibes like 😎</h1><br>
+        <button onclick="greeting()">hey there..!!🙌</button>
+        <div id="greetbox"></div>
+        <script>
+            function greeting(){
+                const current=new Date();
+                const hour=current.getHours();
+                let greet;
+                if(hour<12){
+                    greet="Good morning..!🌞";
+                }else
+                if(hour<18){
+                    greet="Good afternoon..!☀";
+                }
+                else{
+                    greet="Good evening..!🌙"
+                }
+                alert(greet);
+            const b=document.getElementById("greetbox");
+            box.textContent=greet;
+            box.style.display="block";
+            setTimeout(()=>{
+                box.style,display="none";
+            },3000);}
+        </script>
+    </body>
+</html>

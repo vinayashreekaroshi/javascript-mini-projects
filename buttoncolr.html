@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content="width=device-width,initial-scale=1">
+        <title>button colour changing</title>
+        <style>
+            body{
+                font-family:arial,sans-serif;
+                align-items: center;
+                justify-content:center;
+                display:  flex;
+            }
+            .container {
+                display:flex;
+                flex-direction:column;
+                align-items: center;
+                justify-content:center;
+                background-color: rgb(225, 178, 206);
+                border-radius: 15px;
+                height:  50vh;
+                padding: 30px;
+                width: 50%;
+                box-sizing: border-box;
+            }
+           button{
+                background-color:rgb(226, 202, 106);
+                color:black;
+                border:black;
+                border-radius: 2.5px;;
+                font-size:20px;
+                padding:10px 20px;
+                cursor: pointer;
+                transition: background-color 0.4s;
+
+            }
+            
+            button :hover{opacity:0.9;}
+            h1{
+                text-align:center;
+            }
+            p{
+                text-align:  center;
+                font-size: 20px;
+            }
+
+        </style>
+    </head>
+      <body>
+        <div class="container">
+        <h1>Hey there...!!🐱🙋‍♀</h1>
+        <p>Are you feeling bored?🤔<br>Try clicking this button!!😜<br>
+        Watch it changing colors evrytime...🌈</p>
+        <button id="btn">Tap me!!</button>
+        <script>
+            const colrbtn=document.getElementById("btn");
+            colrbtn.addEventListener("click" ,()=>{
+                const randomColor='#'+Math.floor(Math.random()*16777215).toString(16);
+                colrbtn.style.backgroundColor=randomColor;
+            });
+        </script>
+        </div>
+      </body>
+</html>

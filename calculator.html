@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"  content="width=device-width, initial-scale=1">
+        <title>Simple calculator</title>
+        <style>
+            body{
+                background-color:rgb(241, 255, 205);
+                font-family:arial,sans-serif;
+                align-items:center;
+                display:flex;
+                justify-content:center;
+                height:100vh;
+            }
+            .calculator{
+                background-color:rgb(131, 169, 250);
+                padding:25px;
+                text-align:center;
+                border-radius: 15px;
+                width:300px;
+            }
+            input{
+                width:80px;
+                padding:8px;
+                margin:5px;
+                border:black;
+                text-align:center;
+
+            }
+            button{
+                padding:10px 20px;
+                font-size:15px;
+                background-color: darksalmon;
+                color:black;
+                cursor:pointer;
+                transition:0.3s;
+            }
+            button:hover{background-color:darkorange;}
+
+            #res{
+                margin-top:20px;
+                font-weight:bold;
+                color:black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="calculator">
+        <h1>Mini calculator !!</h1>
+        <input type="number" id="n1" placeholder="number 1">
+        <input type="number" id="n2" placeholder="number 2"><br>
+        <button onclick="sum()">Add</button>
+        <p id="res"></p>
+        </div>
+        <script>
+            function sum(){
+                const one=parseFloat(document.getElementById("n1").value);
+                const two=parseFloat(document.getElementById("n2").value);
+                if(isNaN(one)||isNaN(two)){
+                    document.getElementById("res").textContent="Please enter valid number";
+                }
+                else{
+                    const Sum=one+two;
+                    document.getElementById("res").textContent="result: " + Sum;
+                }
+            }
+        </script>
+    </body>
+</html>
